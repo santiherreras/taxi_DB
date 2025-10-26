@@ -5,18 +5,22 @@ By Santiago Herrera
 
 package com.solvd.taxi;
 
-import java.util.*;
+
+import com.solvd.taxi.model.Driver;
+import com.solvd.taxi.service.DriverService;
+import java.util.List;
 
 public class Main {
-
-
-
     public static void main(String[] args) {
-        System.out.println("Prueba");
+        DriverService driverService = new DriverService();
 
-
+        System.out.println("============== ALL DRIVERS ==============");
+        List<Driver> drivers = driverService.getAllDrivers();
+        for (Driver d : drivers) {
+            System.out.println(d);
+        }
     }
-
 }
+
 
 
