@@ -18,3 +18,10 @@ buildNumber.properties
 
 # IntelliJ IDEA
 .idea/
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon?
