@@ -28,13 +28,43 @@ public class Main {
             System.out.println(d);
         }
 
+        System.out.println("\n============== ALL BOOKINGS ==============");
+        List<Booking> bookings = bookingService.getAllBookings();
+        for (Booking  b : bookings) {
+            System.out.println(b);
+        }
 
         System.out.println("\n============== INSERT NEW CAR ==============");
-        Car newCar = new Car(0,"XYZ-456","Toyota", "Corolla", 2022, 1);
+        Car newCar = new Car(0,"FCX-111","Toyota", "Corolla", 2020, 1);
         carService.addCar(newCar);
         System.out.println("Car inserted: " + newCar);
 
+        System.out.println("\n============== INSERT NEW PASSENGER ==============");
+        Passenger newPassenger = new Passenger(10,"Ida", "3213378449");
+        passengerService.addPassenger(newPassenger);
+        System.out.println("Passenger inserted: " + newPassenger);
 
+
+        System.out.println("\n============== UPDATE PASSENGER ==============");
+        String newNumber = "3338947897";
+        passengerService.updatePassengerPhone(5,newNumber);
+
+        System.out.println("\n============== ALL PASSENGERS ==============");
+        List<Passenger> passengers = passengerService.getAllPassengers();
+        for (Passenger p : passengers) {
+            System.out.println(p);
+        }
+
+
+        System.out.println("\n============== DELETE PASSENGER ==============");
+        passengerService.deletePassenger(5);
+
+
+        System.out.println("\n============== ALL PASSENGERS ==============");
+        passengers = passengerService.getAllPassengers();
+        for (Passenger p : passengers) {
+            System.out.println(p);
+        }
 
     }
 }

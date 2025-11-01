@@ -19,7 +19,7 @@ public class CarDAO {
             ps.setInt(4, car.getYear());
             ps.setInt(5, car.getCompanyId());
             ps.executeUpdate();
-            System.out.println("✅ Car inserted: " + car.getLicensePlate());
+            System.out.println("Car inserted: " + car.getLicensePlate());
         } catch (SQLException e) {
             e.printStackTrace();
         }

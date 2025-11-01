@@ -12,7 +12,5 @@ public class BookingService {
         return bookingDAO.getAllBookings();
     }
 
-    public void deleteBooking(int id) {
-        bookingDAO.deleteBooking(id);
-    }
+
 }

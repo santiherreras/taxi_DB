@@ -16,7 +16,7 @@ public class PassengerDAO {
             ps.setString(1, passenger.getName());
             ps.setString(2, passenger.getPhone());
             ps.executeUpdate();
-            System.out.println("✅ Passenger inserted: " + passenger.getName());
+            System.out.println("Passenger inserted: " + passenger.getName());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -29,7 +29,19 @@ public class PassengerDAO {
             ps.setString(1, newPhone);
             ps.setInt(2, passengerId);
             int rows = ps.executeUpdate();
-            if (rows > 0) System.out.println("✅ Passenger phone updated (ID " + passengerId + ")");
+            if (rows > 0) System.out.println("Passenger phone updated (ID " + passengerId + ")");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deletePassenger(int passengerId) {
+        String sql = "DELETE FROM Passengers WHERE passenger_id = ?";
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, passengerId);
+            ps.executeUpdate();
+            System.out.println("Passenger deleted: " + passenger.getName()) + " Id: " + passengerId;
         } catch (SQLException e) {
             e.printStackTrace();
         }

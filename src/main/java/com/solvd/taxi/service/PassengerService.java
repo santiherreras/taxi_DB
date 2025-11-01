@@ -19,4 +19,8 @@ public class PassengerService {
     public List<Passenger> getAllPassengers() {
         return passengerDAO.getAllPassengers();
     }
+
+    public void deletePassenger(int id) {
+        passengerDAO.deletePassenger(id);
+    }
 }

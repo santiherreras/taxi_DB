@@ -32,15 +32,5 @@ public class BookingDAO {
         return bookings;
     }
 
-    public void deleteBooking(int bookingId) {
-        String sql = "DELETE FROM Bookings WHERE booking_id = ?";
-        try (Connection conn = ConnectionPool.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, bookingId);
-            int rows = ps.executeUpdate();
-            if (rows > 0) System.out.println("🗑️ Booking deleted (ID " + bookingId + ")");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
